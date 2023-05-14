@@ -3,11 +3,13 @@
 </p>
 
 # Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines
-In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. <br />
+In this tutorial we will inspect the different network traffic between two virtual machines using a network protocol analyzer called Wireshark. as well as experiment with Network Security Groups. <br />
 
-<h2>Tutorial Guidelines<h2>
+<h2>Tutorial Guidelines</h2>
  
-### Step 1 Install Resources
+<h3>Step 1: Creating two different virtual machines</h3>
+ First we start by creating a Windows 10 virtual machine on Azure, this was done in a previous tutorial which can found [here](https://github.com/Mwajiduddin/How-to-create-a-virtual-machine-in-Microsoft-Azure).
+ 
 The first step will be creating a Resource group that will house our two Virtual Machines to observe the traffic being sent between the two machines. To Create the Resource Group you can do a quick search for `Research Group ` at the top of Azure or you can select `Create a Resource` and then choose to create the Resource group from the Azure Market Place. 
 
 <p align="center">
