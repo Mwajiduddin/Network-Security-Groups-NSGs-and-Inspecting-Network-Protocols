@@ -2,13 +2,38 @@
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/nettrafi%20diagram.png" height="15%" width="30%" alt="Traffic Examination"/>
 </p>
 
-# Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines
+<h1>Introduction</h1>
 In this tutorial we will inspect the different network traffic between two virtual machines using a network protocol analyzer called Wireshark. as well as experiment with Network Security Groups. <br />
 
 <h2>Tutorial Guidelines</h2>
  
 <h3>Step 1: Creating two different virtual machines</h3>
- First we start by creating a Windows 10 virtual machine on Azure, this was done in a previous tutorial which can found [here](https://github.com/Mwajiduddin/How-to-create-a-virtual-machine-in-Microsoft-Azure).
+
+ First we start off by creating a Windows 10 virtual machine in Azure, this part of step was done in the previous "How to create a virtual machine in Microsoft Azure" tutorial which can found [here](https://github.com/Mwajiduddin/How-to-create-a-virtual-machine-in-Microsoft-Azure) but I'll do a quick rundown on how to make one here as well.
+ 
+ Log into Microsoft Azure, name and create a Resource group by typing in "Resource groups" in the search box or click on the "Resource groups" icon. Here the resource group is named "RG-VMs" and the region is located at East US.
+ <p align="center">
+<img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b1.png" height="45%" width="60%"/>
+</p>
+
+Then type in "virtual machines" in the search box or click on the "virtual machines" icon. Create a virtual machine with a Windows 10 Pro operating system, remember to select the name and the same region of the resource group that you just made. Since we will be interacting with another VM, it's best to select a bigger size than the default so here I chose this VM to have 2 virtual CPUs with 16GB of RAM. Make and remember the username and password that you will log into of this VM, check the Licensing box at the lower left corner and click on "Review + create".
+
+<p align="center">
+<img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b2.png" height="50%" width="65%"/>
+</p>
+
+<p align="center">
+<img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b3.png" height="50%" width="65%"/>
+</p>
+
+
+
+
+
+
+
+
+
  
 The first step will be creating a Resource group that will house our two Virtual Machines to observe the traffic being sent between the two machines. To Create the Resource Group you can do a quick search for `Research Group ` at the top of Azure or you can select `Create a Resource` and then choose to create the Resource group from the Azure Market Place. 
 
