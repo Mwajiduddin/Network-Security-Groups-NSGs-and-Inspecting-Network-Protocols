@@ -13,17 +13,29 @@ In this tutorial we will inspect the different network traffic between two virtu
  
  Log into Microsoft Azure, name and create a Resource group by typing in "Resource groups" in the search box or click on the "Resource groups" icon. Here the resource group is named "RG-VMs" and the region is located at East US.
  <p align="center">
-<img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b1.png" height="45%" width="60%"/>
+<img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b1.png" height="40%" width="60%"/>
 </p>
 
-Then type in "virtual machines" in the search box or click on the "virtual machines" icon. Create a virtual machine with a Windows 10 Pro operating system, remember to select the name and the same region of the resource group that you just made. Since we will be interacting with another VM, it's best to select a bigger size than the default so here I chose this VM to have 2 virtual CPUs with 16GB of RAM. Make and remember the username and password that you will log into of this VM, check the Licensing box at the lower left corner and click on "Review + create".
+Then type in "virtual machines" in the search box or click on the "virtual machines" icon. Create a virtual machine with a Windows 10 Pro operating system, remember to select the same name and the same region of the resource group that you just made. Since we will be interacting with another VM, it's best to select a bigger size than the default so here I chose this VM to have 2 virtual CPUs with 16GB of RAM. Make and remember the username and password that you will log into of this VM, check the Licensing box at the lower left corner and click on "Review + create."
 
 <p align="center">
-<img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b2.png" height="50%" width="65%"/>
+<img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b2.png" height="60%" width="75%"/>
 </p>
 
 <p align="center">
-<img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b3.png" height="50%" width="65%"/>
+<img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b3.png" height="60%" width="75%"/>
+</p>
+
+Now we will be creating our second virtual machine so same process as last time: type in "virtual machines" in the search box, name it, select the same name and region of the resource group you first made, select the same size as well and right next to "Image" select "Ubuntu Server 20.04 LTS - x64 Gen2 (free services eligible)."
+
+<p align="center">
+<img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b4.png" height="60%" width="75%"/>
+</p>
+
+Under "Administrator Account" next to "Authentication type" select the "Password" option instead of "SSH public key." For simplicity sake, you can use the same username and password that you chose for the Windows 10 VM that you made and then click "Review + create."
+
+<p align="center">
+<img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b05.png" height="60%" width="75%"/>
 </p>
 
 
