@@ -3,7 +3,7 @@
 </p>
 
 <h1>Introduction</h1>
-In this tutorial we will utilize different command protocols in Powershell to observe various network traffic between two virtual machines using a network protocol analyzer called Wireshark. We will also configure Network Security Groups (Azure Firewall) to change connectivity between the two VMs.    <br />
+In this tutorial we will utilize different command protocols in Powershell to observe network traffic between two virtual machines using a network protocol analyzer called Wireshark. We will also configure Network Security Groups (Azure Firewall) to change connectivity between the two VMs.    <br />
 
 <h2>Tutorial Guidelines</h2>
  
@@ -39,6 +39,7 @@ Under "Administrator Account" next to "Authentication type" select the "Password
 </p>
 
 <h3>Step 2: Downloading and running Wireshark in Windows 10 VM</h3>
+
 Once the VMs have been made, we are going to log into our Windows 10 VM by way of Remote Desktop Connection. To do this we first need the public IP address for the Windows 10 VM and this can be found by going into "Virtual machines" in Azure, selecting the Windows machine and copying the IP address. 
 
 <p align="center">
@@ -79,7 +80,12 @@ Open up Wireshark by searching "Wireshark" in the Windows search bar. You can vi
 </p>
 
 <h3>Step 3: Running different network protocols and observing its traffic using Wireshark</h3>
+
+<h4 align="center">Utilizing ICMP protocol</h4>
+
+
 We can observe connectivity between our two virtual machines by pinging our Ubuntu VM from our Windows 10 VM. To do this we first need to filter our network traffic by typing in ICMP at the top bar (ICMP is the protocol used by ping) and you'll notice that there isn't any traffic displayed in Wireshark.
+
 
 <p align="center">
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b13.png" height="70%" width="85%"/>
@@ -109,6 +115,8 @@ We can set the Windows VM to ping to Ubuntu VM perpetually by typing in "ping (p
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b17.png" />
 </p>
 
+<h4 align="center">Utilizing Network Security Groups</h4>
+
 While the Windows VM is pinging our Ubuntu VM, we can alter the Firewall rules of the Ubuntu VM to prevent ICMP traffic coming through thus preventing connectivity between the two VMs. Basically we are going to create a new firewall rule that will deny any incoming ICMP traffic. To do this, go into Azure, type in "Network Security Group" in the search bar (which is essentially the virtual machine's Firewall), select the Ubuntu VM network security group, click on "Inbound security rules" and click "+ Add." 
 
 <p align="center">
@@ -136,6 +144,8 @@ To allow connectivity again between the two VMs, just go back to the Inbound sec
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b22.png" />
 </p>
 
+<h4 align="center">Utilizing SSH protocol</h4>
+
 We can access Ubuntu VM from the Windows VM by the Powershell command line using SSH. In Wireshark, filter the traffic by typing in "ssh" in the top bar and click the green fin icon to refresh. Then in Powershell, type  in "ssh (Ubuntu VM username)@(private IP address)" and hit Enter.
 
 <p align="center">
@@ -155,17 +165,25 @@ You can list the directories (folders) of Ubuntu VM by typing in "ls -lasth" and
 </p>
 
 
+<h4 align="center">Utilizing RDP protocol</h4>
+
 We can observe RDP (Remote Desktop Protocol) traffic by its protocol and port number in Wireshark. We can do this by filter RDP traffic by typing "tcp.port == 3389" in the top bar and you will see a continuous display of traffic.
 
 <p align="center">
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b28.png" />
 </p>
 
+<h4 align="center">Utilizing DHCP protocol</h4>
+
 We can observe DHCP traffic in Wireshark by re-issuing our IP address of our Windows VM via the ipconfig /renew command in Powershell. First filter DHCP traffic by typing "dhcp" in the top bar and refresh. Then type in "ipconfig /renew" in the Powershell and observe the traffic in Wireshark. 
 
 <p align="center">
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b26.png" />
 </p>
+
+
+<h4 align="center">Utilizing DNS protocol</h4>
+
 
 We can also observe DNS traffic by the nslookup command in Powershell, this command gives us the IP address of a website. Filter traffic by DNS in Wireshark then type in "nslookup (your choice of website)" into Powershell and observe the network traffic in Wireshark. 
 
