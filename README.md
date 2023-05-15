@@ -1,3 +1,6 @@
+<h1 align="center">Observing network traffic between two virtual machines in Azure using Wireshark</h1>
+
+
 <p align="center">
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/nettrafi%20diagram.png" height="15%" width="30%" alt="Traffic Examination"/>
 </p>
