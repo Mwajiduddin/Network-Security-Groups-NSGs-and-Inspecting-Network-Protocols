@@ -3,7 +3,7 @@
 </p>
 
 <h1>Introduction</h1>
-In this tutorial we will inspect the different network traffic between two virtual machines using a network protocol analyzer called Wireshark. as well as experiment with Network Security Groups. <br />
+In this tutorial we will inspect the different network traffic between two virtual machines using a network protocol analyzer called Wireshark. <br />
 
 <h2>Tutorial Guidelines</h2>
  
