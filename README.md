@@ -38,6 +38,36 @@ Under "Administrator Account" next to "Authentication type" select the "Password
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b05.png" height="60%" width="75%"/>
 </p>
 
+<h3>Step 2: Downloading and running Wireshark in Windows 10 VM</h3>
+Once the VMs have been made, we are going to log into our Windows 10 VM by way of Remote Desktop Connection. To do this we first need the public IP address for the Windows 10 VM and this can be found by going into "Virtual machines" in Azure, selecting the Windows machine and copying the IP address. 
+
+<p align="center">
+<img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b06.png" />
+</p>
+
+Then search and select "Remote Desktop Connection" in the Windows search bar. Paste the IP address where it says "Computer" and click Connect. 
+<p align="center">
+<img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b7.png" />
+</p>
+
+You will be prompted by a window asking for credentials (the same credentials that you made under "Adminstrator account") so click on "More choices" and then click on "Use a different account." Type in the username and password that you created and click on OK. Then you will be prompted by another window stating that "The identity of the remote computer cannot be verified. Do you want to connect anyway?" click Yes.
+
+<p align="center">
+<img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b8.png" />
+</p>
+
+<p align="center">
+<img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b9.png" />
+</p>
+
+As the virtual machine is booting you will see a screen about privacy settings for your device, just select no for each option and hit "Accept." Then on the right hand side there will be prompt about network discoverablity for this VM, select Yes.
+
+Now that our Windows virtual machine is up and running we can observe its network traffic by way of a software called Wireshark. To do this we go into Google and type in "download Wireshark," click on the first link and select Windows Installer (64-bit). Click on "Open file" after the download is finished and install the program. 
+
+Open up Wireshark by searching "Wireshark" in the Windows search bar. You can view live network traffic by selecting "Ethernet" and clicking on the blue icon on the top left corner.  
+
+<h3>Step 3: Running different network protocols and observing its traffic by using Wireshark</h3>
+We can observe connectivity between our two virtual machines by pinging our Ubuntu VM from our Windows 10 VM. To do this we first need to filter our network traffic by typing in ICMP at the top bar (ICMP is the protocol used by ping) and you'll notice that there isn't any traffic. In order to ping to our Ubuntu VM we need to retrieve it private IP address which can be found in our Azure account and clicking on our Ubuntu VM in Virtual machines. After copying the private IP address, go back to your Windows VM, open Powershell from the Windows search bar and type in "ping (private IP address)" and press Enter. You'll notice that Wireshark will display traffic between two source and destination IP addresses, here 10.0.0.4 is the Windows VM and 10.0.0.5 is the Ubuntu VM thus proving connectivity between the VMs.
 
 
 
@@ -46,7 +76,23 @@ Under "Administrator Account" next to "Authentication type" select the "Password
 
 
 
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 The first step will be creating a Resource group that will house our two Virtual Machines to observe the traffic being sent between the two machines. To Create the Resource Group you can do a quick search for `Research Group ` at the top of Azure or you can select `Create a Resource` and then choose to create the Resource group from the Azure Market Place. 
 
 <p align="center">
