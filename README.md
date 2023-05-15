@@ -3,7 +3,7 @@
 </p>
 
 <h1>Introduction</h1>
-In this tutorial we will inspect the different network traffic between two virtual machines using a network protocol analyzer called Wireshark. <br />
+In this tutorial we will utilize different command protocols in Powershell to observe various network traffic between two virtual machines using a network protocol analyzer called Wireshark. We will also configure Network Security Groups (Azure Firewall) to change connectivity between the two VMs.    <br />
 
 <h2>Tutorial Guidelines</h2>
  
