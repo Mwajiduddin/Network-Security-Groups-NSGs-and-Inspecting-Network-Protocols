@@ -19,7 +19,7 @@ In this tutorial we will utilize different command protocols in Powershell to ob
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b1.png" height="40%" width="60%"/>
 </p>
 
-Then type in "virtual machines" in the search box or click on the "virtual machines" icon. Create a virtual machine with a Windows 10 Pro operating system, remember to select the same name and the same region of the resource group that you just made. Since we will be interacting with another VM, it's best to select a bigger size than the default so here I chose this VM to have 2 virtual CPUs with 16GB of RAM. Make and remember the username and password that you will log into of this VM, check the Licensing box at the lower left corner and click on "Review + create."
+Then type in "virtual machines" in the search box or click on the "virtual machines" icon. Create a virtual machine with a Windows 10 Pro operating system, remember to select the same name and the same region of the resource group that you just made. Since we will be interacting with another VM, it's best to select a bigger size than the default so here I chose this VM to have 2 virtual CPUs with 16GB of RAM. Make and remember the username and password that you will log into of this VM, check the Licensing box at the lower left corner, click on "Review + create" and after validation is complete click on "Create" at the bottom.
 
 <p align="center">
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b2.png" height="60%" width="75%"/>
@@ -35,7 +35,7 @@ Now we will be creating our second virtual machine so same process as last time:
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b4.png" height="60%" width="75%"/>
 </p>
 
-Under "Administrator Account" next to "Authentication type" select the "Password" option instead of "SSH public key." For simplicity sake, you can use the same username and password that you chose for the Windows 10 VM that you made and then click "Review + create."
+Under "Administrator Account" next to "Authentication type" select the "Password" option instead of "SSH public key." For simplicity sake, you can use the same username and password that you chose for the Windows 10 VM that you made, then click on "Review + create" and after validation click on "Create."
 
 <p align="center">
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b05.png" height="60%" width="75%"/>
