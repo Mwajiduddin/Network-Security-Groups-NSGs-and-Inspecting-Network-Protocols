@@ -50,6 +50,7 @@ Once the VMs have been made, we are going to log into our Windows 10 VM by way o
 </p>
 
 Then search and select "Remote Desktop Connection" in the Windows search bar. Paste the IP address where it says "Computer" and click Connect. 
+
 <p align="center">
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b7.png" />
 </p>
