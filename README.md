@@ -6,7 +6,7 @@
 </p>
 
 <h1>Introduction</h1>
-In this tutorial we will utilize different command protocols in Powershell to observe network traffic between two virtual machines using a network protocol analyzer called Wireshark. We will also configure Network Security Groups (Azure Firewall) to change connectivity between the two VMs.    <br />
+In this tutorial we will utilize different command line protocols in Powershell to observe network traffic between two virtual machines using a network protocol analyzer called Wireshark. We will also configure Network Security Groups (Azure Firewall) to alter connectivity between the two VMs.    <br />
 
 <h2>Tutorial Guidelines</h2>
  
@@ -14,12 +14,12 @@ In this tutorial we will utilize different command protocols in Powershell to ob
 
  First we start off by creating a Windows 10 virtual machine in Azure, this part of step was done in the previous "How to create a virtual machine in Microsoft Azure" tutorial which can found [here](https://github.com/Mwajiduddin/How-to-create-a-virtual-machine-in-Microsoft-Azure) but I'll do a quick rundown on how to make one here as well.
  
- Log into Microsoft Azure, name and create a Resource group by typing in "Resource groups" in the search box or click on the "Resource groups" icon. Here the resource group is named "RG-VMs" and the region is located at East US.
+ Log into Microsoft Azure, name and create a Resource group by typing in "Resource groups" in the search box or clicking on the "Resource groups" icon. Here the resource group is named "RG-VMs" and the region is located at East US.
  <p align="center">
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b1.png" height="40%" width="60%"/>
 </p>
 
-Then type in "virtual machines" in the search box or click on the "virtual machines" icon. Create a virtual machine with a Windows 10 Pro operating system, remember to select the same name and the same region of the resource group that you just made. Since we will be interacting with another VM, it's best to select a bigger size than the default so here I chose this VM to have 2 virtual CPUs with 16GB of RAM. Make and remember the username and password that you will log into of this VM, check the Licensing box at the lower left corner, click on "Review + create" and after validation is complete click on "Create" at the bottom.
+Then type in "virtual machines" in the search box or click on the "virtual machines" icon. Create a virtual machine with a Windows 10 Pro operating system, remember to select the same name and the same region as the resource group that you just made. Since we will be interacting with another VM, it's best to select a bigger size than the default so here I chose this VM to have 2 virtual CPUs with 16GB of RAM. Make and remember the username and password that you will log into of this VM, check the Licensing box at the lower left corner, click on "Review + create" and after validation is complete click on "Create" at the bottom.
 
 <p align="center">
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b2.png" height="60%" width="75%"/>
@@ -43,7 +43,7 @@ Under "Administrator Account" next to "Authentication type" select the "Password
 
 <h3>Step 2: Downloading and running Wireshark in Windows 10 VM</h3>
 
-Once the VMs have been made, we are going to log into our Windows 10 VM by way of Remote Desktop Connection. To do this we first need the public IP address for the Windows 10 VM and this can be found by going into "Virtual machines" in Azure, selecting the Windows machine and copying the IP address. 
+Once the VMs are made, we are going to log into our Windows 10 VM by way of Remote Desktop Connection. To do this we first need the public IP address for the Windows 10 VM and this can be found by going into "Virtual machines" in Azure, selecting the Windows machine and copying the IP address. 
 
 <p align="center">
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b06.png" />
@@ -71,7 +71,7 @@ As the virtual machine is booting you will see a screen about privacy settings f
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b10.png" />
 </p>
 
-Now that our Windows virtual machine is up and running we can observe its network traffic by way of a software called Wireshark. To do this we go into Google and type in "download Wireshark," click on the first link and select Windows Installer (64-bit). Click on "Open file" after the download is finished and install the program. 
+Now that our Windows virtual machine is up and running we can observe its network traffic by way of a software called Wireshark. To do this we go into Google and type in "download Wireshark," click on the first link and select Windows Installer (64-bit). Click "Open file" after the download is finished and install the program. 
 
 <p align="center">
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b11.png" />
@@ -95,7 +95,7 @@ We can observe connectivity between our two virtual machines by pinging our Ubun
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b13.png" height="70%" width="85%"/>
 </p>
 
-In order to ping to our Ubuntu VM we need to retrieve it private IP address which can be found in our Azure account and clicking on our Ubuntu VM in Virtual machines. After copying the private IP address, go back to your Windows VM, open Powershell from the Windows search bar and type in "ping (private IP address)" and press Enter. 
+In order to ping to our Ubuntu VM we need to retrieve its private IP address which can be found in our Azure account and clicking on our Ubuntu VM in Virtual machines. After copying the private IP address, go back to your Windows VM, open Powershell from the Windows search bar and type in "ping (private IP address)" and press Enter. 
 
 <p align="center">
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b14.png" />
@@ -107,13 +107,13 @@ You'll notice that Wireshark will display traffic between two IP addresses under
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b15.png" />
 </p>
 
-We can also see connectivity between the Windows VM and a website for instance. To test this go into Powershell, type in ping and the website you would like to test connectivity to and hit Enter. Here you can see that 10.0.0.4 is the Windows VM and 172.253.115.136 is the website YouTube proving the VM connected to youtube.com.
+We can also see connectivity between the Windows VM and a website for instance. To test this go into Powershell, type in ping and the website you would like to test connectivity to and hit Enter. Here you can see that 10.0.0.4 is the Windows VM and 172.253.115.136 is YouTube proving connectivity.
 
 <p align="center">
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b16.png" />
 </p>
 
-We can set the Windows VM to ping to Ubuntu VM perpetually by typing in "ping (private IP address) -t" and hit Enter; notice Wireshark is constantly displaying network traffic between the virtual machines nonstop. 
+We can set the Windows VM to ping to Ubuntu VM perpetually by typing in "ping (private IP address) -t" and hitting Enter; notice Wireshark is constantly displaying network traffic between the virtual machines nonstop. 
 
 <p align="center">
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b17.png" />
@@ -127,7 +127,7 @@ While the Windows VM is pinging our Ubuntu VM, we can alter the Firewall rules o
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b18.png" />
 </p>
 
-Here select "ICMP" under Protocol and "Deny" under Action. Change the Priority value above SSH's 300 so that the rule we made will be the first rule enact, here I've chose 200 as the rule's Priority value and click Add.
+Here select "ICMP" under Protocol and "Deny" under Action. Change the Priority value above SSH's 300 so that the rule we made will be the first rule enact, here I've chosen 200 as the rule's Priority value and then click Add.
 And once you're done adding this rule, notice the network traffic in Wireshark and Powershell, it basically shows that the Windows VM is pinging the Ubuntu VM yet there is no connection between them.
 
 <p align="center">
@@ -138,7 +138,7 @@ And once you're done adding this rule, notice the network traffic in Wireshark a
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b20.png" />
 </p>
 
-To allow connectivity again between the two VMs, just go back to the Inbound security rule, select "Allow" and "Save" and you should notice correspondence between the virtual machines. Hit Ctrl + C in Powershell to stop pinging.
+To allow connectivity again between the two VMs, just go back to the Inbound security rule, select "Allow" and "Save" and you should notice correspondence between the virtual machines again. Hit Ctrl + C in Powershell to stop pinging.
 
 <p align="center">
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b21.png" />
@@ -150,13 +150,13 @@ To allow connectivity again between the two VMs, just go back to the Inbound sec
 
 <h2 align="center">Utilizing SSH protocol</h2>
 
-We can access Ubuntu VM from the Windows VM by the Powershell command line using SSH. In Wireshark, filter the traffic by typing in "ssh" in the top bar and click the green fin icon to refresh. Then in Powershell, type  in "ssh (Ubuntu VM username)@(private IP address)" and hit Enter.
+We can access Ubuntu VM from the Windows VM by the Powershell command line using SSH. In Wireshark, filter the traffic by typing in "ssh" in the top bar and clicking on the green fin icon to refresh. Then in Powershell, type  in "ssh (Ubuntu VM username)@(private IP address)" and hit Enter.
 
 <p align="center">
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b23.png" />
 </p>
 
-You will receive a prompt if you want to continue so type "yes." Then you will need to enter the password that you made for your Ubuntu VM under "Administrator account" and when you type in your password you'll notice that there's no visible text appearing, there is nothing wrong with Powershell you just need to type it in correctly. After you've type in your password and hit Enter, you successfully logged in Ubuntu's VM marked by green text virtual machine name.
+You will receive a prompt if you want to continue so type "yes." Then you will need to enter the password that you made for your Ubuntu VM under "Administrator account" and when you type in your password you'll notice that there's no visible text appearing, there is nothing wrong with Powershell you just need to type it in correctly. Hit Enter after you've typed your password, you successfully logged in Ubuntu's VM marked by green text virtual machine name.
 
 <p align="center">
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b24.png" />
@@ -171,7 +171,7 @@ You can list the directories (folders) of Ubuntu VM by typing in "ls -lasth" and
 
 <h2 align="center">Utilizing RDP protocol</h2>
 
-We can observe RDP (Remote Desktop Protocol) traffic by its protocol and port number in Wireshark. We can do this by filter RDP traffic by typing "tcp.port == 3389" in the top bar and you will see a continuous display of traffic.
+We can observe RDP (Remote Desktop Protocol) traffic by its protocol and port number in Wireshark. We can do this by filtering RDP traffic by typing in "tcp.port == 3389" in the top bar and seeing a continuous display of traffic.
 
 <p align="center">
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b28.png" />
@@ -179,7 +179,7 @@ We can observe RDP (Remote Desktop Protocol) traffic by its protocol and port nu
 
 <h2 align="center">Utilizing DHCP protocol</h2>
 
-We can observe DHCP traffic in Wireshark by re-issuing our IP address of our Windows VM via the ipconfig /renew command in Powershell. First filter DHCP traffic by typing "dhcp" in the top bar and refresh. Then type in "ipconfig /renew" in the Powershell and observe the traffic in Wireshark. 
+We can observe DHCP traffic in Wireshark by re-issuing the IP address of our Windows VM via the ipconfig /renew command in Powershell. First filter DHCP traffic by typing "dhcp" in the top bar and refresh. Then type in "ipconfig /renew" in the Powershell and observe the traffic in Wireshark. 
 
 <p align="center">
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b26.png" />
