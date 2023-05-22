@@ -41,7 +41,7 @@ Under "Administrator Account" next to "Authentication type" select the "Password
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b05.png" height="60%" width="75%"/>
 </p>
 
-<h3>Step 2: Downloading and running Wireshark in Windows 10 VM</h3>
+<h3>Step 2: Downloading and running Wireshark in the Windows 10 VM</h3>
 
 Once the VMs are made, we are going to log into our Windows 10 VM by way of Remote Desktop Connection. To do this we first need the public IP address for the Windows 10 VM and this can be found by going into "Virtual machines" in Azure, selecting the Windows machine and copying the IP address. 
 
@@ -83,7 +83,7 @@ Open up Wireshark by searching "Wireshark" in the Windows search bar. You can vi
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/b12.png" />
 </p>
 
-<h3>Step 3: Running different network protocols and observing its traffic using Wireshark</h3>
+<h3>Step 3: Running different network protocols and observing its traffic by using Wireshark</h3>
 
 <h2 align="center">Utilizing ICMP protocol</h2>
 
