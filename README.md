@@ -5,7 +5,7 @@
 <img src="https://github.com/Mwajiduddin/Mwajiduddin/blob/main/images/nettrafi%20diagram.png" height="15%" width="30%" alt="Traffic Examination"/>
 </p>
 
-<h1>Overview</h1>
+<h2>Overview</h2>
 In this tutorial we will utilize different network protocols in Powershell to observe the traffic between two virtual machines using a network protocol analyzer called Wireshark. We will also configure Network Security Groups (Azure Firewall) to alter the connectivity between the two VMs.    <br />
 
 <h2>Tutorial Guidelines</h2>
